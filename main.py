@@ -1,4 +1,5 @@
 # import all the relevant classes
+from unicodedata import name
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -86,16 +87,20 @@ sm = windowManager()
 users=pd.read_csv('login.csv')
 
 # class for the dashboard(Homepage of app)
-class dashboard(Screen):
+class dashboardWindow(Screen):
     pass
 
 # class that builds gui
 class MainApp(MDApp):
     def build(self):
+        self.theme_cls.theme_style = "Light"
+        self.theme_cls.primary_palette = "DeepPurple"
+
         # adding screens
         sm.add_widget(loginWindow(name='login'))
         sm.add_widget(signupWindow(name='signup'))
         sm.add_widget(logDataWindow(name='logdata'))
+        sm.add_widget(dashboardWindow(name='dashboard'))
         return sm
 
 # driver function
