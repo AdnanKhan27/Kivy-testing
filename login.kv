@@ -38,22 +38,25 @@ windowManager:
                 height: self.texture_size[1]
                 padding_y: 15
 
-            MDTextFieldRound:
+            MDTextField:
                 id : email
                 hint_text: "e-mail"
+                mode: "rectangle"
                 icon_left: "email"
                 multiline :False
-                font_size: 16
+                #font_size: 14
                 size_hint_y: None
+                padding_y: [5,5]
                 pos_hint : {"ceter_x": 0.5}
             #Label:
             #   text : "PASSWORD: "
             #  size_hint : 0.2, 0.1
             # pos_hint : {"x" : 0.25, "top" : 0.7}
             
-            MDTextFieldRound:
+            MDTextField:
                 id : pwd
                 hint_text: "password"
+                mode: "rectangle"
                 icon_left: "eye-off"
                 multiline :False
                 size_hint_y: None
@@ -74,9 +77,7 @@ windowManager:
                     root.validate()
                     root.manager.transition.direction = "up"
             
-            Widget:
-                size_hint_y: None
-                height: 10
+
 
 # GUI for the signup window
 <signupWindow>:
@@ -109,25 +110,28 @@ windowManager:
                 height: self.texture_size[1]
                 padding_y: 15
             
-            MDTextFieldRound:
+            MDTextField:
                 id : name2
                 hint_text: "username"
+                mode: "fill"
                 #icon_right: "eye-off"
                 multiline : False
                 size_hint_y : None
                 pos_hint : {"center_x": 0.5}
             
-            MDTextFieldRound:
+            MDTextField:
                 id : email
                 hint_text: "email"
+                mode: "fill"
                 #icon_right: "eye-off"
                 multiline : False
                 size_hint_y : None
                 pos_hint : {"center_x": 0.5}
             
-            MDTextFieldRound:
+            MDTextField:
                 id : pwd
                 hint_text: "password"
+                mode: "fill"
                 #icon_right: "eye-off"
                 multiline : False
                 size_hint_y : None
