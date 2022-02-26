@@ -85,6 +85,10 @@ sm = windowManager()
 # reading all the data stored
 users=pd.read_csv('login.csv')
 
+# class for the dashboard(Homepage of app)
+class dashboard(Screen):
+    pass
+
 # class that builds gui
 class MainApp(MDApp):
     def build(self):
