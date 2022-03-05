@@ -88,13 +88,14 @@ users=pd.read_csv('login.csv')
 
 # class for the dashboard(Homepage of app)
 class dashboardWindow(Screen):
+    #name = self.
     pass
 
 # class that builds gui
 class MainApp(MDApp):
     def build(self):
         self.theme_cls.theme_style = "Light"
-        self.theme_cls.primary_palette = "DeepPurple"
+        self.theme_cls.primary_palette = "Indigo"
 
         # adding screens
         sm.add_widget(loginWindow(name='login'))

@@ -4,6 +4,7 @@ windowManager:
     signupWindow:
     logDataWindow:
     dashboardWindow:
+
 # GUI for the login window
 <loginWindow>:
     email : email
@@ -12,7 +13,7 @@ windowManager:
         Rectangle:
             pos: self.pos
             size: self.size
-            source: "bg.jpg"
+            #source: "bg.jpg"   <!uncomment for background image>
     FloatLayout:
         size: root.width, root.height
         #Label:
@@ -28,7 +29,7 @@ windowManager:
             padding: 25
             spacing: 25
             orientation: 'vertical'
-           
+
             MDLabel:
                 id: welcome_label
                 text: "WELCOME"
@@ -60,6 +61,7 @@ windowManager:
                 icon_left: "eye-off"
                 multiline :False
                 size_hint_y: None
+                password: True
                 pos_hint : {"ceter_x": 0.5}
             
             MDRoundFlatButton:
@@ -89,7 +91,7 @@ windowManager:
             Rectangle:
                 pos: self.pos
                 size: self.size
-                source: "bg.jpg"
+                #source: "bg.jpg"
 
         MDCard:
             size_hint: None, None
@@ -143,10 +145,6 @@ windowManager:
                 on_press :
                     root.signupbtn()
                     root.manager.transition.direction = "right"
-            
-            Widget:
-                size_hint_y: None
-                height: 10
 
 # GUI to show validation result
 <logDataWindow>:
@@ -155,6 +153,7 @@ windowManager:
         
 
         MDCard:
+            #b: "bg.jpg"
             size_hint: None, None
             size: 300, 400
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
@@ -178,13 +177,13 @@ windowManager:
                     app.root.current = 'dashboard'
                     root.manager.transition.direction = "down"
 
-            MDRoundFlatButton:
-                text : "Create new account"
-                size_hint_y : None
-                pos_hint : {"center_x": 0.5}
-                on_release:
-                    app.root.current = 'signup'
-                    root.manager.transition.direction = "down"
+            
+            #MDRoundFlatButton:
+             #   text : "Create new account"
+              # pos_hint : {"center_x": 0.5}
+               # on_release:
+                #    app.root.current = 'signup'
+                 #   root.manager.transition.direction = "down"
             
             Widget:
                 size_hint_y: None
@@ -208,8 +207,10 @@ windowManager:
                 MDBoxLayout:
                     orientation:"vertical"
                     MDLabel:
-                        text:"Hussam's Family"
+                        text:"Welcome To CalmAura"
                         font_style:"H4"
+                        #padding_y: [1,0]
+                    
                     MDBoxLayout:
                         adaptive_size:True
                         spacing:dp(10)
@@ -221,42 +222,54 @@ windowManager:
                             icon:'chevron-down'
 
                 MDIconButton:
-                    icon:"images/notification.png"
+                    icon:"cog-outline"
+                    
             MDGridLayout:
                 size_hint_y:.75
                 cols:2
                 padding:[dp(15),dp(15),dp(15),dp(35)]
                 spacing:dp(15)
                 ElementCard:
-                    image:"images/calendar.png"
-                    text:"Calender"
-                    subtext:"March, Wednesday"
+                    image:"images/resized/diary.png"
+                    text:"Diary"
+                    subtext:"Your daily journal"
 
                 ElementCard:
-                    image:"images/food.png"
-                    text:"Groceries"
-                    subtext:"Broccoli, Apple"
+                    image:"images/resized/warning.png"
+                    text:"Challenges"
+                    subtext:"Self-care issues"
 
                 ElementCard:
-                    image:"images/map.png"
-                    text:"Location"
-                    subtext:"Lucy Mao going to Office"
-                
+                    image:"images/resized/camera-dolly.png"
+                    text:"Videos"
+                    subtext:"Helpful videos"
 
                 ElementCard:
-                    image:"images/festival.png"
+                    image:"images/resized/data.png"
                     text:"Activity"
-                    subtext:"Rose favorite your Post"
+                    subtext:"Your mood chart"
 
                 ElementCard:
-                    image:"images/todo.png"
-                    text:"To Do"
-                    subtext:"Homework, Design"
+                    image:"images/resized/accounting.png"
+                    #size_hint: [2,2]
+                    text:"Test"
+                    subtext:"Mood Test"
                 
                 ElementCard:
-                    image:"images/setting.png"
-                    text:"Setting"
+                    image:"images/resized/spell-book2.png"
+                    #size_hint: [3,3]
+                    text:"Stories"
                     subtext:""
+                
+                ElementCard:
+                    image:"images/resized/internet.png"
+                    text:"Mood Wiki"
+                    subtext:"All about depression"
+                
+                ElementCard:
+                    image:"images/robot.png"
+                    text:"Assistant"
+                    subtext:"Your Chatbot"
 
 
 <ElementCard@MDCard>:
@@ -273,6 +286,7 @@ windowManager:
     orientation:'vertical'
     Image:
         source:root.image
+        size_hint_min: None, None
     MDBoxLayout:
         orientation:'vertical'
         MDLabel:
@@ -283,4 +297,4 @@ windowManager:
             halign:"center"
             font_style:"Caption"
             text:root.subtext
-
+            
