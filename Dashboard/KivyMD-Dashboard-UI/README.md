@@ -6,11 +6,5 @@ A nice clean dashboard UI design 6 custom icons with inside 6 cards with smooth 
 `pip install kivy`
 `pip install kivymd`
 
-[watch on YouTube ](https://youtu.be/Xam6Q-BDBVc)
+![Screenshot](../../assets/dashboard.png)
 
-
-![Screenshot](AppScreenshot.jpg)
-
-
-
-![Alt Text](app-gif.gif)
